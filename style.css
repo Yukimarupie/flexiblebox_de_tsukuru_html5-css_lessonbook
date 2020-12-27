@@ -1,0 +1,258 @@
+@charset "UTF-8"; /* 文字化けを防ぐ */
+
+/* ページ全体の設定 */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: none;
+     text-size-adjust: none;
+}
+
+/* 「ヘッダー」 */
+header {
+    background: white;
+    padding: 25px 15px;
+    color: #29abe2;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+}
+
+    /* リンク */
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:hover {
+        opacity: 0.7;
+    }
+
+    /* ナビバー */
+    ul {
+        list-style-type: none;
+        padding: 0;
+        color: #666666;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+    }
+
+        /* liの間に隙間を。構造擬似クラス、否定疑似クラス。 */
+        li:not(:last-child) {
+            margin-right: 20px;
+        }
+
+/* 「コンテンツ」 */
+
+.contents {
+    background: #29abe2;
+    padding: 40px 15px;
+}
+
+article {
+    background: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    line-height: 2; /* デフォルトのpのサイズは16pxなので、2倍の32px */
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0; /* デフォルトのmarginは16pxなので0に */
+}
+
+time {
+    color: #666666;
+    margin-bottom: 15px;
+    display: block;
+}
+
+
+/* サブメニュー */
+
+aside {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+h2 {
+    color: #29abe2;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* imgをセンタリングする時は親要素に。 */
+.profile figure {
+    text-align: center;
+}
+
+.profile p {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+/* 「フッター」 */
+footer {
+    background: #6ac4eb;
+    padding: 25px 15px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* ヒーローイメージ */
+.hero {
+    background-image: url(img/desk_top_wrapper_organizer.png);
+    background-size: cover;
+    background-position: center;
+    height: 532px;
+    color: brown;
+    padding: 15px;
+    box-sizing: border-box; /* box内に設定したpaddingを治めるために入れる。 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-family: 'Noto Serif JP', serif;
+    text-shadow: 0 0 5px brown;
+    text-align: center;
+}
+
+.hero p {
+    font-weight: bold;
+    text-shadow: 0 0 5px brown;
+    margin-top: 0;
+}
+
+.hero a {
+    border: solid 2px #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+}
+
+
+.top_post {
+    padding: 15px;
+}
+
+.top_post div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* 記事と記事の間に間隔を入れる */
+}
+
+.top_post article {
+    padding: 0;
+    width: 48%;
+    flex: none; /* これはなんだ！！！ */
+    
+}
+
+.top_post h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ==== iPad用設定 ====*/
+
+@media (min-width: 600px) {
+    .container {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    article {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+    
+    header .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .top_post h1 {
+        font-size: 72px;
+    }
+    .top_post article {
+        width: 23%;
+    }
+    
+    .top_post article:not(:nth-last-child(-n+2)) {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ==== iPad用設定 終わり ====*/
+/* ==== iPad用設定 終わり ====*/
+
+
+
+/*==== PC用設定 ここから ====*/
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1100px;
+    }
+
+    .contents .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    article {
+        width: 68%;
+        box-sizing: border-box;
+    }
+
+    .sub {
+        width: 28%;
+    }
+
+    .profile {
+        margin-top: 0;
+    }
+
+}
+
+
+/*==== PC用設定 ここまで ====*/
+/*==== PC用設定 ここまで ====*/
